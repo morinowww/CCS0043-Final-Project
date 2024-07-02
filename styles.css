@@ -1,0 +1,96 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    background-color: #F9F6EE;
+    color: #fff;;
+}
+
+header {
+    background-color: #111;
+    padding: 10px 0;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    margin: 0 15px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+button{
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+    width: 200px;
+    border-radius: 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+button:hover{
+    text-decoration: underline
+}
+
+main{
+    text-align: center;
+    padding: 50px 20px;
+}
+
+footer{
+    margin-top: auto;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #111;
+}
+
+h1{
+    font-size: 50px;
+    margin: 10px;
+    padding: 0;
+}
+
+p{
+    font-size: 20px;
+    margin: 10px;
+    padding: 0;
+}
+
+input{
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+}
+
+.body_text{
+    font-family: "Oswald", sans-serif;  
+    color: #111;
+    margin: 10px;
+    padding: 0;
+}
+
+
+hr{
+    width: 200px;
+}
