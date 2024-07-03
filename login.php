@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'config.php';
+require 'config_artist.php';
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];

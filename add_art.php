@@ -1,19 +1,6 @@
 <?php
     session_start();
-
-
-    if (!isset($_SESSION['user'])) {
-        header('Location: login.php');
-        exit();
-    }
-    if (isset($_POST['logout'])){
-        header('Location: login.php');
-        unset($_SESSION['user']);
-    }
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,17 +27,23 @@
         </nav>
     </header>
     <main>
-        <h1> <?php echo $_SESSION['_name']?></h1>
-        <h1> <?php echo $_SESSION['user']?></h1>
-        <h1> <?php echo $_SESSION['email']?></h1>
-        <div><button type = "submit" name = "add_art" onclick="document.location='add_art.php'">Add Art</button></div>
-        <form action="account.php" method="POST">
-            <div><button type="submit" name="logout">Logout</button></div>
-        </form>
+        <div>
+            <form action = "submit_art.php" method="POST">
+                <div>
+                    <input style = "width: 500px" type="text" name="art_name" placeholder="Art Name" required>
+                    <input type="date" name="art_date" placeholder="Date Created" required>
+                </div>
+                <div>
+                    <textarea rows = "5"style = "width: 690px" name="art_description" pattern= "{,500}" title = "Description must not be longer than 500 words." placeholder = "Enter short description here (0-500 words)" required></textarea>
+                </div>
+                <div><input type="file" id="myFile" name="art_fileUpload" class = "file_upload" required></div>
+                <div></div>
+                <input type="submit">
+            </form>
+        <div>
     </main>
     <footer>
         <p>&copy; 2024 Mortel Artworks Gallery. All rights reserved.</p>
     </footer>
 </body>
-
 </html>

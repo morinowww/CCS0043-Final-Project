@@ -94,3 +94,21 @@ input{
 hr{
     width: 200px;
 }
+
+.file_upload{
+    border-radius: 10px;
+    border: 2px solid #111;
+    color: #111;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 700px;
+}
+
+textarea{
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    border-radius: 10px;
+    border: 2px solid #111;
+    font-size: 20px;
+    padding: 5px;
+    
+}
