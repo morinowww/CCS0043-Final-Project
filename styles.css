@@ -59,12 +59,30 @@ footer{
     text-align: center;
     padding: 10px 0;
     background-color: #111;
+
+    height:24px; 
+    width: 100%;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0% 0%;
+    position: fixed;
+    bottom: 0pt;
+    left: 0pt;
 }
 
 h1{
     font-size: 50px;
     margin: 10px;
     padding: 0;
+}
+
+h2{
+    margin: 0px;
+}
+
+h3{
+    margin: 0px;
 }
 
 p{
@@ -83,16 +101,23 @@ input{
 
 }
 
+hr{
+    width: 200px;
+}
+
+textarea{
+    font-family: Arial, Helvetica, sans-serif, sans-serif;
+    border-radius: 10px;
+    border: 2px solid #111;
+    font-size: 20px;
+    padding: 5px;
+    
+}
+
 .body_text{
     font-family: "Oswald", sans-serif;  
     color: #111;
-    margin: 10px;
     padding: 0;
-}
-
-
-hr{
-    width: 200px;
 }
 
 .file_upload{
@@ -104,11 +129,83 @@ hr{
     width: 700px;
 }
 
-textarea{
-    font-family: Arial, Helvetica, sans-serif, sans-serif;
-    border-radius: 10px;
+.display_grid{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;  
+    padding-bottom: 50px;
+    justify-content: center;
+}
+
+.item_frame{
+    -ms-flex-preferred-size: calc(30% - 30px);
+    flex-basis: calc(30%);
+
+    margin: 0 15px 30px;
+
+    overflow: hidden;
+
     border: 2px solid #111;
-    font-size: 20px;
-    padding: 5px;
-    
+    border-radius: 15px;
+}
+
+.art_date{
+    font-size: 15px;
+    font-family: "Oswald", sans-serif;  
+    color: #111;
+    padding: 0;
+    margin: 0px;
+}
+
+img{
+    height: 100%;
+    width: 95%;
+    border: 2px solid #111;
+    border-radius: 15px;
+    object-fit: contain;
+
+}
+
+.account_div{
+    padding: 0% 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.item_frame:hover, .item_text:hover{
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 979px) {
+    .item_frame {
+        -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    .item_frame{
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+
+        font-size: 24px;
+    }
+    .ag-courses-item_link {
+        padding: 22px 40px;
+    }
+    .ag-courses-item_date-box {
+        font-size: 16px;
+    }
 }

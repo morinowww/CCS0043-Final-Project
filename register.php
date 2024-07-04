@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config_artist.php';
+    require 'config.php';
 
     $valid = TRUE;
 
@@ -21,7 +21,7 @@
 
         if ($valid){
             $_SESSION['user'] = $_POST['artistUsername'];
-            $_SESSION['name'] = $_POST['artistName'];
+            $_SESSION['_name'] = $_POST['artistName'];
             $_SESSION['pass'] = $_POST['artistPass'];
             $_SESSION['email'] = $_POST['artistEmail'];
             header("Location: submit_account.php");

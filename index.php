@@ -30,6 +30,25 @@
     <main>
         <h1 class = "body_text">Welcome to The Gallery</h1>
         <p  class = "body_text">Explore our vast collection of art and history.</p>
+        <div class ="display_grid">
+                <?php
+                    require 'config.php';
+                    $stmt = $pdo->query('SELECT * FROM arts');
+                    while ($row = $stmt->fetch()){
+                    //for ($x = 0; $x < 2; $x++){
+                            echo "<div class = 'item_frame'>";
+                                echo "<h2 class = 'body_text'>".$row['art_name']."</h2>";
+                                echo "<h3 class = 'body_text'>".$row['artist_id']."</h2>";
+                                echo "<div class = 'item_frame_image'>";
+                                    echo "<img src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
+                                echo "</div>";
+                                echo "<p class = 'art_date'>" . $row['art_date'] . "</p>";
+                                $var = "/'add_art.php/'";
+                                echo '<button onclick =' . '"document.location = ' . "'add_art.php'" . '"' . '>Detailed View</button>';                         
+                            echo "</div>";
+                    }
+                ?>
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Mortel Artworks Gallery. All rights reserved.</p>
