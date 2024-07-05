@@ -57,22 +57,22 @@
         <hr></hr>
         <h1 class = "body_text">Your Gallery</h1>
         <div class ="display_grid">
-                <?php
-                    require 'config.php';
-                    $stmt = $pdo->query('SELECT * FROM arts');
-                    while ($row = $stmt->fetch()){
-                        if ($row['artist_id'] == $_SESSION['user']){
-                            echo "<div class = 'item_frame'>";
-                                echo "<h2 class = 'body_text'>".$row['art_name']."</h2>";
-                                echo "<h3 class = 'body_text'>".$row['artist_id']."</h2>";
-                                echo "<div class = 'item_frame_image'>";
-                                    echo "<img src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
-                                echo "</div>";
-                                echo "<p class = 'art_date'>" . $row['art_date'] . "</p>";
+            <?php
+                require 'config.php';
+                $stmt = $pdo->query('SELECT * FROM arts');
+                while ($row = $stmt->fetch()){
+                    if ($row['artist_id'] == $_SESSION['user']){
+                        echo "<div class = 'item_frame'>";
+                            echo "<h2 class = 'body_text'>".$row['art_name']."</h2>";
+                            echo "<h3 class = 'body_text'>".$row['artist_id']."</h2>";
+                            echo "<div class = 'item_frame_image'>";
+                                echo "<img img class = 'img_sub' src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
                             echo "</div>";
-                        }
+                            echo "<p class = 'art_date'>" . $row['art_date'] . "</p>";
+                        echo "</div>";
                     }
-                ?>
+                }
+            ?>
         </div>
     </main>
     <footer>

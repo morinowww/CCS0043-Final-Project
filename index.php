@@ -40,18 +40,20 @@
                                 echo "<h2 class = 'body_text'>".$row['art_name']."</h2>";
                                 echo "<h3 class = 'body_text'>".$row['artist_id']."</h2>";
                                 echo "<div class = 'item_frame_image'>";
-                                    echo "<img src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
+                                    echo "<img class = 'img_sub' src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
                                 echo "</div>";
                                 echo "<p class = 'art_date'>" . $row['art_date'] . "</p>";
-                                $var = "/'add_art.php/'";
-                                echo '<button onclick =' . '"document.location = ' . "'add_art.php'" . '"' . '>Detailed View</button>';                         
+                                echo "<form action = 'detailed_view.php' method = 'POST'>";
+                                    echo "<input type='hidden' name='id_detailed' value = " . '"'. $row['art_id'] .'"'.">";
+                                    echo '<button type = "submit">Detailed View</button>';  
+                                echo "</form>";
                             echo "</div>";
                     }
                 ?>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Mortel Artworks Gallery. All rights reserved.</p>
+        <p class = "footer_text">&copy; 2024 Mortel Artworks Gallery. All rights reserved.</p>
     </footer>
 </body>
 </html>
