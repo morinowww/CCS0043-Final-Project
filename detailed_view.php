@@ -4,6 +4,15 @@
     $stmt = $pdo->query('SELECT * FROM arts');
     $stmt2 = $pdo->query('SELECT * FROM artists');
     $stmt3 = $pdo->query('SELECT * FROM art_comments');
+    $varID;
+    if (!isset($varID)){
+        if (isset($_SESSION['art_id_detailed'])){
+            $varID = $_SESSION['art_id_detailed'];
+        }
+        else{
+            $varID = $_POST['id_detailed'];
+        }
+    }
 ?>
 
 
@@ -35,7 +44,8 @@
         <div class = detailed_view_contain>
             <?php
                 while ($row = $stmt->fetch()){
-                    if ($row['art_id'] == $_POST['id_detailed']){
+
+                    if ($row['art_id'] == $varID){
                         echo "<div class = 'item_frame_image_detailed'>";
                             echo "<img  class = 'img_detail' src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
                         echo "</div>";
@@ -58,14 +68,17 @@
                 <div>
                     <?php echo "<hr style = 'width:100%'>"?>
                     <h2 class = "body_text">Comments</h2>
-                        <form>
-                            <textarea rows = "5"style = "width: 690px" name="art_description" pattern= "{,500}" title = "Comments must not be longer than 500 words." placeholder = "Enter comment here (0-500 words)"></textarea>
+                        <form action = "submit_comment.php" method ="POST">
+                            <textarea name = "art_comment" rows = "5"style = "width: 690px" name="art_description" pattern= "{,500}" title = "Comments must not be longer than 500 words." placeholder = "Enter comment here (0-500 words)"></textarea>
                             <button type = "submit">Submit</button>
+                            <?php
+                                echo "<input type='hidden' name='id_detailed' value = " . '"'. $varID .'"'.">";
+                            ?>
                         </form>
                 </div>
                 <?php 
                     while ($row3 = $stmt3->fetch()){
-                        if ($row3['art_id'] == $_POST['id_detailed']){
+                        if ($row3['art_id'] == $varID){
                             echo "<hr style = 'width:100%'>";
                             echo "<div class = 'comment_entry'>";
                                 echo "<p class = 'body_text'>". $row3['art_comment'] ."</p>";
