@@ -13,6 +13,20 @@
                     $loginError = "Username already taken.";
                     $valid = FALSE;
                 }
+                $email_regex = '/^[^0-9][_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+                if (!preg_match($email_regex, $_POST['artistEmail'])){
+                    $loginError = "Please follow email format.";
+                    $valid = FALSE;
+                }
+                $pass_regex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/";
+                if (!preg_match($pass_regex, $_POST['artistPass'])){
+                    $loginError = "Please follow password format.";
+                    $valid = FALSE;
+                }
+                if (empty($_POST['artistName'])){
+                    $loginError = "Please do not leave name blank.";
+                    $valid = FALSE; 
+                }
             }
         }
         catch (PDOException $e) {
@@ -23,6 +37,7 @@
             $_SESSION['user'] = $_POST['artistUsername'];
             $_SESSION['_name'] = $_POST['artistName'];
             $_SESSION['pass'] = $_POST['artistPass'];
+            $_SESSION['user'] = $_POST['artistUsername'];
             $_SESSION['email'] = $_POST['artistEmail'];
             header("Location: submit_account.php");
         }
@@ -70,8 +85,8 @@
                     pattern="^\S+$" 
                     title = "Username must contain no spaces"
                     required>
-                <input type="password" name="artistPass" placeholder="Password" 
-                    pattern= "(?=.*[a-z])(?=.*[A-Z]).{8,50}" 
+                <input type="password" name="artistPass" placeholder="Password"
+                    pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}$"
                     title = "Password must contain at least one number and one uppercase and lowercase letter, and must be at least 8 characters"
                     required>
             </div>

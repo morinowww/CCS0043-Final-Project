@@ -7,6 +7,10 @@
     $artist_id = ($_SESSION['user']);
     $art_uploaded = $_FILES['art_fileUpload'];
 
+    if (empty($art_name) || empty($art_date) || empty($_FILES['art_fileUpload'])){
+        header("Location: " . "add_art.php");
+        exit();
+    }
     require 'config.php';
 
     $result = mysqli_query($con, "SELECT MAX(art_id) AS max_art_id FROM arts");    
@@ -17,12 +21,17 @@
 
     $art_ext = pathinfo($art_uploaded['name'], PATHINFO_EXTENSION);
 
+    $art_uploaded['name'] = $art_id . "." . $art_ext;
+    move_uploaded_file($art_uploaded['tmp_name'], "gallery/".$art_uploaded['name']);
+
+    if (!$art_ext == ('jpg' || 'jpeg' || 'png' || 'gif')){
+        exit();
+    }
+
     $sql = "INSERT INTO arts(art_name, art_date, artist_id, art_description, art_id, art_format)
     VALUES ('$art_name', '$art_date', '$artist_id', '$art_description', '$art_id', '$art_ext')";
     $result = mysqli_query($con, $sql);
 
-    $art_uploaded['name'] = $art_id . "." . $art_ext;
-    move_uploaded_file($art_uploaded['tmp_name'], "gallery/".$art_uploaded['name']);
 
     echo $ext;
 
