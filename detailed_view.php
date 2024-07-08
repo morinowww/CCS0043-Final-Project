@@ -59,7 +59,7 @@
                             echo "<em><h3 class = 'body_text'>". $row["artist_id"] ."</h3></em>";
                             echo "<h4 class = 'body_text'>". $row["art_date"] ."</h4>";
                             echo "<p class = 'body_text'>" . $row["art_description"] . "</p>";
-                            echo '<button onclick =' . '"document.location = ' . "'index.php'" . '"' . '>Done</button>';                         
+                            echo '<button onclick =' . '"document.location = ' . "'index.php'" . '"' . '>Done</button>';   
                         echo "</div>";
                     }
                 }

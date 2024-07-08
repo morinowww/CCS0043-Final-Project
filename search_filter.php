@@ -28,7 +28,7 @@
         </nav>
     </header>
     <main>
-        <h1 class =  "body_text">Search and Filter Artworks</h1>
+        <h1 class =  "body_text">Search and Filter</h1>
         <form method="POST" action="search_filter.php">
             <input type="text" name="searchTerm" placeholder="Artist name, art name or description" ?>">
             <button type="submit">Search</button>
