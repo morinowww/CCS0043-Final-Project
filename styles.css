@@ -116,13 +116,31 @@ textarea{
     padding: 0;
 }
 
+.body_text_sub{
+    font-family: "Oswald", sans-serif;  
+    color: #111;
+    padding: 0;
+    margin: 0px;   
+}
+
+.comment_div{
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.comment_img{
+    width: 80px;
+    height: 80px;
+}
+
 .file_upload{
     border-radius: 10px;
     border: 2px solid #111;
     color: #111;
     box-sizing: border-box;
     background-color: #fff;
-    width: 700px;
+    width: 780px;
 }
 
 .display_grid{
@@ -167,7 +185,6 @@ textarea{
 }
 
 .img_detail{
-    height:100%;
     border: 2px solid #111;
     border-radius: 15px;
 }

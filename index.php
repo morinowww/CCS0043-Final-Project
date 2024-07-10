@@ -43,7 +43,8 @@
                                 echo "<div class = 'item_frame_image'>";
                                     echo "<img class = 'img_sub' src = ./Gallery/" . $row['art_id'] .  "." . $row['art_format'] . ">";
                                 echo "</div>";
-                                echo "<p class = 'art_date'>" . $row['art_date'] . "</p>";
+                                echo "<p class = 'art_date'>Created on: " . $row['art_date'] . "</p>";
+                                echo "<p class = 'art_date'>Posted on: " . $row['art_posted'] . "</p>";
                                 echo "<form action = 'detailed_view.php' method = 'POST'>";
                                     echo "<input type='hidden' name='id_detailed' value = " . '"'. $row['art_id'] .'"'.">";
                                     echo '<button type = "submit">Detailed View</button>';  

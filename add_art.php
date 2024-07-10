@@ -31,10 +31,11 @@
             <form action = "submit_art.php" method="POST" enctype="multipart/form-data">
                 <div>
                     <input style = "width: 500px" type="text" name="art_name" placeholder="Art Name" required>
+                    <label class = "body_text">Date Created</label>
                     <input type="date" name="art_date" placeholder="Date Created" required>
                 </div>
                 <div>
-                    <textarea rows = "5"style = "width: 690px" name="art_description" pattern= "{,500}" title = "Description must not be longer than 500 words." placeholder = "Enter short description here (0-500 words)"></textarea>
+                    <textarea rows = "5"style = "width: 765px" name="art_description" pattern= "{,500}" title = "Description must not be longer than 500 words." placeholder = "Enter short description here (0-500 words)"></textarea>
                 </div>
                 <div><input type="file" id="myFile" name="art_fileUpload" class = "file_upload" required
                 title = "Only JPG, PNG, and GIF format is accepted"  multiple accept = "image/*"></div>

@@ -57,9 +57,10 @@
                                     }
                                 }      
                             echo "<em><h3 class = 'body_text'>". $row["artist_id"] ."</h3></em>";
-                            echo "<h4 class = 'body_text'>". $row["art_date"] ."</h4>";
-                            echo "<p class = 'body_text'>" . $row["art_description"] . "</p>";
-                            echo '<button onclick =' . '"document.location = ' . "'index.php'" . '"' . '>Done</button>';   
+                            echo "<h4 class = 'body_text'>Created on: ". $row["art_date"] ."</h4>";
+                            echo "<h4 class = 'body_text'>Posted on: ". $row["art_posted"] ."</h4>";
+                            echo "<p class = 'body_text' style = 'text-align: justify'>" . $row["art_description"] . "</p>";
+                            echo '<button onclick =' . '"document.location = ' . "'index.php'" . '"' . '>Back</button>';   
                         echo "</div>";
                     }
                 }
@@ -81,7 +82,13 @@
                         if ($row3['art_id'] == $varID){
                             echo "<hr style = 'width:100%'>";
                             echo "<div class = 'comment_entry'>";
-                                echo "<p class = 'body_text'>". $row3['art_comment'] ."</p>";
+                                echo "<div>";
+                                echo "<div class = 'comment_div'>";
+                                    echo "<img src='img/def_picture.png' class = 'comment_img' alt='Avatar'>";
+                                    echo "<p class = 'body_text'>". $row3['art_comment'] ."</p>";
+                                echo "</div>";
+                                echo "<p class = 'body_text_sub' style = 'font-size:small' style = 'margin: 0px 10px' >". $row3['art_comment_date'] ."</p>";
+                                echo "</div>";
                             echo "</div>";
                         }
                     }

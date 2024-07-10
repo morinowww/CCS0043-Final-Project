@@ -59,8 +59,9 @@ $arts = $art_stmt->fetchAll();
                     <div class="item_frame_image">
                         <img class="img_sub" src="Gallery/<?php echo htmlspecialchars($art['art_id']) . '.' . htmlspecialchars($art['art_format']); ?>" alt="<?php echo htmlspecialchars($art['art_name']); ?>">
                     </div>
-                    <p class="art_date"><?php echo htmlspecialchars($art['art_date']); ?></p>
                     <?php
+                        echo "<p class = 'art_date'>Created on: " . $art['art_date'] . "</p>";
+                        echo "<p class = 'art_date'>Posted on: " . $art['art_posted'] . "</p>";                            
                         echo "<form action = 'detailed_view.php' method = 'POST'>";
                         echo "<input type='hidden' name='id_detailed' value = " . '"'. $art['art_id'] .'"'.">";
                         echo '<button type = "submit">Detailed View</button>';  

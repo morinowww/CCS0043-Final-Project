@@ -28,16 +28,20 @@
         exit();
     }
 
-    $sql = "INSERT INTO arts(art_name, art_date, artist_id, art_description, art_id, art_format)
-    VALUES ('$art_name', '$art_date', '$artist_id', '$art_description', '$art_id', '$art_ext')";
+    $date = date('Y-m-d H:i:s');
+
+    $sql = "INSERT INTO arts(art_name, art_date, art_posted, artist_id, art_description, art_id, art_format)
+    VALUES ('$art_name', '$art_date', '$date','$artist_id', '$art_description', '$art_id', '$art_ext')";
     $result = mysqli_query($con, $sql);
+    if ($result){
+        mysqli_close($con);
+        header("Location: " . "thank_you.php");
+    }
 
-
-    echo $ext;
-
-    mysqli_close($con);
-
-    header("Location: " . "thank_you.php");
+    if ($result){
+        mysqli_close($con);
+        header("Location: " . "try_again.php");
+    }
 
     exit()
 ?>
