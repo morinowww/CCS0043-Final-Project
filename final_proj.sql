@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2024 at 08:18 AM
+-- Generation Time: Jul 17, 2024 at 01:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -95,6 +95,29 @@ INSERT INTO `art_comments` (`art_comment_id`, `art_id`, `art_comment`, `art_comm
 ('00000000005', '00000000001', 'I love this art!', '2024-07-10'),
 ('00000000006', '00000000005', 'Wow. I love the expressions.', '2024-07-10');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT 'Anonymous',
+  `message` text NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`id`, `name`, `message`, `timestamp`) VALUES
+(16, 'Mortel', 'Crush ko yung classmate natin kaso hindi ko matanong yung pangalan. Sir, kung nababasa niyo po ito sana pakilala niyo ako. ', '2024-07-17 11:38:39'),
+(17, 'Eiggerg', 'Ang galing ko sa DOTA', '2024-07-17 11:38:51'),
+(18, 'Cando', 'Isa akong mahusay na student leader', '2024-07-17 11:38:59'),
+(19, 'Nomis', 'Crush ko si bea\r\n', '2024-07-17 11:39:12');
+
 --
 -- Indexes for dumped tables
 --
@@ -116,6 +139,22 @@ ALTER TABLE `arts`
 --
 ALTER TABLE `art_comments`
   ADD PRIMARY KEY (`art_comment_id`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

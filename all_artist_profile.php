@@ -20,9 +20,9 @@
         <nav>
             <ul>
                 <li><a href="index.php">Gallery</a></li>
-                <li><a href="#">About The Gallery</a></li>
+                <li><a href="aboutthegallery.php">About The Gallery</a></li>
                 <li><a href="search_filter.php">Search and Filter</a></li>
-                <li><a href="#">Freedom Wall</a></li>
+                <li><a href="freedomwall.php">Freedom Wall</a></li>
                 <li><a href="all_artist_profile.php">Artists</a></li>
                 <li><a href="account.php">Account</a></li>
             </ul>
@@ -31,7 +31,7 @@
     <main>
         <h1 class = "body_text">Artist Profiles</h1>
         <div class="display_grid">
-            <?php while ($row = $stmt->fetch()): ?>
+        <?php while ($row = $stmt->fetch()): ?>
                 <div class="item_frame">
                     <h2 class="body_text"><?php echo htmlspecialchars($row['artist_name']); ?></h2>
                     <p class="body_text"><?php echo htmlspecialchars($row['artist_id']); ?></p>

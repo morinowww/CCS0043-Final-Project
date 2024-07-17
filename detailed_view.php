@@ -32,10 +32,10 @@
         <nav>
             <ul>
                 <li><a href="index.php">Gallery</a></li>
-                <li><a href="#">About The Gallery</a></li>
+                <li><a href="aboutthegallery.php">About The Gallery</a></li>
                 <li><a href="search_filter.php">Search and Filter</a></li>
-                <li><a href="#">Bulletin Board</a></li>
-                <li><a href="#">Artists</a></li>
+                <li><a href="freedomwall.php">Freedom Wall</a></li>
+                <li><a href="all_artist_profile.php">Artists</a></li>
                 <li><a href="account.php">Account</a></li>
             </ul>
         </nav>
